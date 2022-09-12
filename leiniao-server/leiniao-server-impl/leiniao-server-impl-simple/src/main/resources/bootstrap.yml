@@ -1,0 +1,54 @@
+# Tomcat
+server:
+  port: 3100
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  application:
+    name: service-simple
+  profiles:
+    # 环境配置
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        # 命名空间
+        namespace: d0928a69-deb9-4857-b475-43c17d562e52
+        # 注册中心地址
+        server-addr: 175.24.200.44:8848
+        username: nacos
+        password: Hu371329
+      config:
+        enabled: true
+        # 命名空间
+        namespace: d0928a69-deb9-4857-b475-43c17d562e52
+        group: DEFAULT_GROUP
+        # 配置中心地址
+        server-addr: 175.24.200.44:8848
+        username: nacos
+        password: Hu371329
+        # 配置文件格式
+        file-extension: yml
+        # 扩展配置
+        shared-configs:
+          - base-config.${spring.cloud.nacos.config.file-extension}
+#          - ${spring.application.name}-redis-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+#          - ${spring.application.name}-mysql-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+#          - ${spring.application.name}-seata-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+#          - ${spring.application.name}-swagger-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+
+swagger:
+  basePackage: com.shenkong.server.impl
+  title: service-simple
+  description: service-simple
+  version: 1.0.0
+  license: Apache 2.0
+  licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfServiceUrl: http://www.apache.org/licenses/LICENSE-2.0.html
+  host: https://www.shenkong.com/
+  contact:
+    name: huweilong
+    url: https://www.huweilong.com/
+    email: huweilong@huweilong.com

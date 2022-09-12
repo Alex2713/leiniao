@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>leiniao-server</artifactId>
+        <groupId>com.leiniao</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>leiniao-server-service</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>leiniao-server-service-base</module>
+        <module>leiniao-server-service-simple</module>
+    </modules>
+
+    <dependencies>
+        <!-- SpringBoot 依赖配置 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.leiniao</groupId>
+            <artifactId>leiniao-server-data-base</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.leiniao</groupId>
+            <artifactId>leiniao-server-service-base</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+</project>
